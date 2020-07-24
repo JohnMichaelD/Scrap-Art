@@ -9,42 +9,57 @@ import list from './list.png'
 import footerBackground from './wood2.jpg'
 import glass from './mag\ glass.png'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header" style={{'background-image': 'url("./wood.jpg")'}}>
-          <div className="header"> 
-            <div className="headerLeftColumn">
-              <div className="actualSearch">
-                <img src={glass} className="glass"/>
-                <input className="searchBar" placeholder="Search Scrap Art!"></input>
+import Posting from './Posting.js'
+
+class App extends React.Component {
+  constructor(props) {
+    super(props) 
+    this.state={
+  
+    }
+
+  }
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header" style={{'background-image': 'url("./wood.jpg")'}}>
+            <div className="header"> 
+              <div className="headerLeftColumn">
+                <div className="actualSearch">
+                  <img src={glass} className="glass"/>
+                  <input className="searchBar" placeholder="Search Scrap Art!"></input>
+                </div>
+                <div> 
+                  Distance: 5 miles
+                </div>
               </div>
-              <div> 
-                Distance: 5 miles
+              <div className="HeaderLogo"> 
+                <img src={logo} className="logo"/>
               </div>
             </div>
-            <div className="HeaderLogo"> 
-              <img src={logo} className="logo"/>
+            <img src={headerBackground} className="wood"/>
+        </header>
+        <Posting/>
+        <Posting/>
+        <Posting/>
+        <Posting/>
+        <footer className="App-footer" style={{'background-image': 'url("./wood2.jpg")'}}>
+          <div className="footer">
+            <div>
+              <img src={list} className="list"/>
+            </div>
+            <div className="newPost">
+              <img src={newPost} className="newPost"/>
+            </div>
+            <div className="Message">
+              <img src={message} className="message"/>
             </div>
           </div>
-          <img src={headerBackground} className="wood"/>
-      </header>
-      <footer className="App-footer" style={{'background-image': 'url("./wood2.jpg")'}}>
-        <div className="footer">
-          <div>
-            <img src={list} className="list"/>
-          </div>
-          <div className="newPost">
-            <img src={newPost} className="newPost"/>
-          </div>
-          <div className="Message">
-            <img src={message} className="message"/>
-          </div>
-        </div>
-        <img src={footerBackground} className="wood2"/>
-      </footer>
-    </div>
-  );
+          <img src={footerBackground} className="wood2"/>
+        </footer>
+      </div>
+    );
+  }  
 }
 function Search() {
   return (
