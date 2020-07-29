@@ -39,20 +39,22 @@ class App extends React.Component {
             </div>
             <img src={headerBackground} className="wood"/>
         </header>
-        <Posting/>
-        <Posting/>
-        <Posting/>
-        <Posting/>
+        <div className="body">
+          <Posting/>
+          <Posting/>
+          <Posting/>
+          <Posting/>
+        </div>
         <footer className="App-footer" style={{'background-image': 'url("./wood2.jpg")'}}>
           <div className="footer">
             <div>
-              <img src={list} className="list"/>
+              <img src={list} className="icon"/>
             </div>
             <div className="newPost">
-              <img src={newPost} className="newPost"/>
+              <img src={newPost} className="icon"/>
             </div>
             <div className="Message">
-              <img src={message} className="message"/>
+              <img src={message} className="icon"/>
             </div>
           </div>
           <img src={footerBackground} className="wood2"/>

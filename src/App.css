@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 
 }
 
@@ -68,13 +68,14 @@
   z-index: -10;
 }
 
-.App-footer {
-  min-height: 50px;
-  width: 100%;
-  bottom: 0;
-  overflow: auto;
-  font-size: 12px;
-  color: black;
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  margin-top: 150px;
+  margin-left: 15%;
+
 }
 
 .footer {
@@ -84,35 +85,27 @@
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   overflow: auto;
+  z-index: 11;
 }
 
-.list {
-  height: 50px;
-  width: 50px;
+.icon {
+  height: 25px;
+  width: 25\px;
 }
 
-.newPost {
-  height: 50px;
-  width: 50px;
-}
-
-.message {
-  height: 50px;
-  width: 50px;
-}
 
 .wood2 {
   width: 100%;
   max-height: 50px;
   bottom: 0;
   right: 0;
-  z-index: -10;
+  z-index: 10;
   display: flex;
-  position: absolute;
+  position: fixed;
   margin-bottom: auto;
 }
 
