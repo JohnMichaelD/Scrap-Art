@@ -1,6 +1,8 @@
 import React from 'react';
 import './Posting.css';
 
+import metal from './Metal.jpg'
+
 class Posting extends React.Component {
     constructor(props) {
       super(props) 
@@ -13,10 +15,20 @@ class Posting extends React.Component {
       return (
           <div className="posting">
             <div className="image">
-              Image
+              <img src={metal} className="listImage"/>
             </div>
-            <div classname="price">
-              Free: 10 Mi.
+            <div classname="textBox">
+              <div classname="price">
+                Price
+              </div>
+              <div classname="title">
+                <div>
+                  Title
+                </div>
+                <div>
+                  Location
+                </div>
+              </div>
             </div>
           </div>
 

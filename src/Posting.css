@@ -1,21 +1,42 @@
-.posting {
-   text-align: center;
-    display: flex;
-    border: gray;
-    padding: 10px;
-    border-style: solid;
-    margin: 1px;
-    width: 250px;
-    height: 250px;
+.posting {  
+border: white;
+border-radius: 3%;
+padding: 10px;
+border-style: solid;
+margin: 1px;
+width: 250px;
+height: 250px;
+cursor: pointer;
 }
+
 .image {
 display: flex;
-border-style: dotted;
-padding:30px
+padding: 30px;
+height: 85%;
+padding: 0;
+border-radius: 5%;
+}
+
+.listImage {
+width: 100%;
+border-radius: 3%;
+}
+
+.textBox {
+display: flex;
+height: 50%;
+
 }
 
 .price {
 display: flex;
 align-self: auto;
 padding-right: 10px;
+height: 15%;
+width: 25%
+}
+
+.title {
+color: gray;
+font-size: xx-small;
 }

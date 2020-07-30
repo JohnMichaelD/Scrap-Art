@@ -43,7 +43,6 @@ class App extends React.Component {
           <Posting/>
           <Posting/>
           <Posting/>
-          <Posting/>
         </div>
         <footer className="App-footer" style={{'background-image': 'url("./wood2.jpg")'}}>
           <div className="footer">
