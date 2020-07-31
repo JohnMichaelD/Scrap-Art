@@ -9,7 +9,7 @@ class Posting extends React.Component {
       this.state={
 
       }
-  
+      console.log(this.props.postingInfo)
     }
     render() {
       return (
@@ -17,16 +17,16 @@ class Posting extends React.Component {
             <div className="image">
               <img src={metal} className="listImage"/>
             </div>
-            <div classname="textBox">
-              <div classname="price">
-                Price
+            <div className="textBox">
+              <div className="price">
+                ${this.props.postingInfo.price}
               </div>
-              <div classname="title">
+              <div className="title">
                 <div>
-                  Title
+                  {this.props.postingInfo.title}
                 </div>
                 <div>
-                  Location
+                  {this.props.postingInfo.location}
                 </div>
               </div>
             </div>

@@ -1,65 +1,64 @@
 import React from 'react';
 import './App.css';
 
-import headerBackground from './wood.jpg'
-import logo from './scraplogo.png'
-import message from './message.png'
-import newPost from './newpost.png'
-import list from './list.png'
-import footerBackground from './wood2.jpg'
-import glass from './mag\ glass.png'
-
-import Posting from './Posting.js'
+import Listings from './Listings.js'
+import NewPost from './NewPost.js'
 
 class App extends React.Component {
   constructor(props) {
-    super(props) 
+    super(props)
+    this.newPostClick = this.newPostClick.bind(this);
+
     this.state={
-  
+      page: "home",
+      postingArray: [{
+        title: "Example Title",
+        price: 10.2,
+        category: "Example Category",
+        location: 94610,
+        sellerName: "Exaple Name",
+        email:  "Example@Email.com",
+        description: "Example Description",
+      },{
+        title: "Title 2",
+        price: 0,
+        category: "Metal",
+        location: 94611,
+        sellerName: "Scrap SF",
+        email:  "Example@Email.com",
+        description: "Example Description",
+      },{
+        title: "Title 2",
+        price: 0,
+        category: "Metal",
+        location: 94611,
+        sellerName: "Scrap SF",
+        email:  "Example@Email.com",
+        description: "Example Description"
+      }
+    ]
     }
 
   }
+  newPostClick(event) {
+    this.setState({page: "newPost"})
+  }
   render() {
-    return (
-      <div className="App">
-        <header className="App-header" style={{'background-image': 'url("./wood.jpg")'}}>
-            <div className="header"> 
-              <div className="headerLeftColumn">
-                <div className="actualSearch">
-                  <img src={glass} className="glass"/>
-                  <input className="searchBar" placeholder="Search Scrap Art!"></input>
-                </div>
-                <div> 
-                  Distance: 5 miles
-                </div>
-              </div>
-              <div className="HeaderLogo"> 
-                <img src={logo} className="logo"/>
-              </div>
-            </div>
-            <img src={headerBackground} className="wood"/>
-        </header>
-        <div className="body">
-          <Posting/>
-          <Posting/>
-          <Posting/>
-        </div>
-        <footer className="App-footer" style={{'background-image': 'url("./wood2.jpg")'}}>
-          <div className="footer">
-            <div>
-              <img src={list} className="icon"/>
-            </div>
-            <div className="newPost">
-              <img src={newPost} className="icon"/>
-            </div>
-            <div className="Message">
-              <img src={message} className="icon"/>
-            </div>
-          </div>
-          <img src={footerBackground} className="wood2"/>
-        </footer>
-      </div>
-    );
+    console.log(this.state.page)
+    if(this.state.page==="home"){
+      return(
+        <Listings 
+          postingArray={this.state.postingArray}
+          newPostClick={this.newPostClick}
+        />
+      )
+    } else if(this.state.page==="newPost") {
+      return(
+        <NewPost
+        newPostingArray={this.state.newPostingArray}
+        />
+      )
+    }
   }  
 }
 function Search() {
