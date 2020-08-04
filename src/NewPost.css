@@ -1,4 +1,14 @@
-.header {
+
+.appPost {
+  top: 10;
+  min-height: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.headerPost {
     width: 100%;
     height: 100px;
     display: flex;
@@ -8,13 +18,162 @@
     position: absolute;
     top: 0;
     left: 0;
+    font-weight: bold;
+    border-bottom: solid;
   }
 
-  .wood {
+  .woodPost {
     width: 100%;
     max-height: 100px;
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -10;
+    z-index: 10;
   }
+
+  .bodyPost {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 70%;
+    margin-top: 100px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 100px;
+    padding: 5px;
+  }
+
+  .addPhotos {
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 5%;
+    padding: 75px;
+    cursor: pointer;
+    margin: 2px;
+  }
+
+  .postTitle {
+    display: flex;
+    justify-content: start;
+    border-style: solid;
+    border-radius: 5%;
+    padding: 5px;
+    margin: 2px;
+  }
+  
+  .postInput {
+    background: transparent;
+    border: none;
+    font-size: medium;
+    color: black;
+    position: relative;
+  }
+
+  .postPrice {
+    display: flex;
+    justify-content: start;
+    border-style: solid;
+    border-radius: 5%;
+    padding: 5px;
+    margin: 2px;
+  }
+
+  .postCategory {
+    display: flex;
+    justify-content: space-between;
+    border-style: solid;
+    border-radius: 5%;
+    padding: 5px;
+    cursor: pointer;
+    margin: 2px;
+  }
+
+  .postInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 2px;
+  }
+
+  .postLocation {
+    display: flex;
+    justify-content: start;
+    border-style: solid;
+    border-radius: 5%;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-right: 50px;
+    margin: 2px;
+
+  }
+  
+  .postSeller {
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+    border-radius: 5%;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-right: 50px;
+    margin: 2px;
+  }
+
+  .postEmail {
+    display: flex;
+    justify-content: start;
+    border-style: solid;
+    border-radius: 5%;
+    padding: 5px;
+    margin: 2px;
+  }
+
+  .postDescription {
+    display: flex;
+    justify-content: flex-start;
+    border-style: solid;
+    border-radius: 5%;
+    padding: 5px;
+    margin: 2px;
+  }
+
+  .postInputDescription {
+    background: transparent;
+    border: none;
+    font-size: medium;
+    color: black;
+    padding: 50px;
+    display: flex;
+    
+  }
+
+
+  .postButton {
+    border: solid;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    background-color: #414343;
+    cursor: pointer;
+  }
+
+  .footerPost {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 11;
+    border-top: solid;
+  }
+  
