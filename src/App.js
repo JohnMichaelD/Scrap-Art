@@ -1,16 +1,17 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
 
-import Listings from './Listings.js'
-import NewPost from './NewPost.js'
+import Listings from './components/Listings.js'
+import NewPost from './components/NewPost.js'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.newPostClick = this.newPostClick.bind(this);
+    this.submitPost = this.submitPost.bind(this);
 
     this.state={
-      page: "home",
+      page: "newPost",
       postingArray: [{
         title: "Example Title",
         price: 10.2,
@@ -43,6 +44,32 @@ class App extends React.Component {
   newPostClick(event) {
     this.setState({page: "newPost"})
   }
+
+  submitPost(event) {
+    var title = document.getElementById('titleInput').value
+    var price = document.getElementById('priceInput').value
+    var location = document.getElementById('locationInput').value
+    var name = document.getElementById('nameInput').value
+    var email = document.getElementById('emailInput').value
+    var description = document.getElementById('descriptionInput').value
+
+    var newPostJson = {
+      title: title,
+      price: price,
+      category: "bleh",
+      location: location,
+      sellerName: name,
+      email:  email,
+      description: description
+    }
+    console.log(newPostJson)
+
+    this.setState({
+      page: "home", 
+      postingArray: this.state.postingArray.concat([newPostJson])
+    })
+  }
+
   render() {
     console.log(this.state.page)
     if(this.state.page==="home"){
@@ -55,7 +82,8 @@ class App extends React.Component {
     } else if(this.state.page==="newPost") {
       return(
         <NewPost
-        newPostingArray={this.state.newPostingArray}
+          newPostingArray={this.state.newPostingArray}
+          submitPost={this.submitPost}
         />
       )
     }

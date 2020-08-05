@@ -1,7 +1,7 @@
 import React from 'react';
-import './Posting.css';
+import '../styles/Posting.css';
 
-import metal from './Metal.jpg'
+import metal from '../assets/Metal.jpg'
 
 class Posting extends React.Component {
     constructor(props) {

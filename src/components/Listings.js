@@ -1,13 +1,13 @@
 import React from 'react';
-import './App.css';
+import '../styles/App.css';
 
-import headerBackground from './wood.jpg'
-import logo from './scraplogo.png'
-import message from './message.png'
-import newPost from './newpost.png'
-import list from './list.png'
-import footerBackground from './wood2.jpg'
-import glass from './mag\ glass.png'
+import headerBackground from '../assets/wood.jpg'
+import logo from '../assets/scraplogo.png'
+import message from '../assets/message.png'
+import newPost from '../assets/newpost.png'
+import list from '../assets/list.png'
+import footerBackground from '../assets/wood.jpg'
+import glass from '../assets/mag\ glass.png'
 
 import Posting from './Posting.js'
 
