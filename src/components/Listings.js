@@ -18,6 +18,19 @@ class Listings extends React.Component {
       
     }
   }
+
+  componentDidMount() {
+    let request = new XMLHttpRequest();
+      request.open('GET', "http://localhost:3001/posts");
+      request.responseType = 'text';
+
+      request.onload = function() {
+        console.log(request.response)
+      };
+
+      request.send();
+  }
+
   render() {
     const postList = this.props.postingArray.map((posting) =>  <Posting postingInfo={posting}/>);
     return (
