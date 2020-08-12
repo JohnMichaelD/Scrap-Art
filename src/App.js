@@ -11,7 +11,7 @@ class App extends React.Component {
     this.submitPost = this.submitPost.bind(this);
 
     this.state={
-      page: "newPost",
+      page: "home",
       postingArray: [{
         title: "Example Title",
         price: 10.2,

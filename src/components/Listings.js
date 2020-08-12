@@ -14,25 +14,52 @@ import Posting from './Posting.js'
 class Listings extends React.Component {
   constructor(props) {
     super(props) 
-    this.state={
-      
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.state={ 
+      postingArray: [
+        // title: "Example Title",
+        // price: 10.2,
+        // category: "Example Category",
+        // location: 94610,
+        // sellerName: "Exaple Name",
+        // email:  "Example@Email.com",
+        // description: "Example Description",
+      ]
     }
   }
 
+  /// When Listings runs, componentDidMount runs and gets from /posts
   componentDidMount() {
     let request = new XMLHttpRequest();
       request.open('GET', "http://localhost:3001/posts");
-      request.responseType = 'text';
+      request.responseType = 'json';
 
+      let that = this
       request.onload = function() {
-        console.log(request.response)
-      };
+        let fetchedPosts = [] 
+
+        for (let i = 0; i < request.response.length; i++) {
+          let tempPost = {
+            title: request.response[i].title, 
+            price: request.response[i].price,
+            category: request.response[i].category,
+            location: request.response[i].location,
+            sellerName: 'John Doe',
+            email: 'JD@gmail.com',
+            description: request.response[i].description,
+          }
+          fetchedPosts.push(tempPost)
+       }
+
+        that.setState({postingArray: fetchedPosts})
+        console.log(request.response[0])
+      }
 
       request.send();
   }
 
   render() {
-    const postList = this.props.postingArray.map((posting) =>  <Posting postingInfo={posting}/>);
+    const postList = this.state.postingArray.map((posting) =>  <Posting postingInfo={posting}/>);
     return (
       <div className="App">
         <header className="App-header" style={{'background-image': 'url("./wood.jpg")'}}>
