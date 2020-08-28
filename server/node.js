@@ -40,6 +40,10 @@ app.get('/posts', (req, res) => {
 
 })
 
+app.post('/post', (req, res) => {
+  console.log('this is a post post')
+  res.send("Woot Woot")
+})
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

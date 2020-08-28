@@ -4,6 +4,8 @@ import './styles/App.css';
 import Listings from './components/Listings.js'
 import NewPost from './components/NewPost.js'
 
+import axios from 'axios'
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -64,10 +66,17 @@ class App extends React.Component {
     }
     console.log(newPostJson)
 
-    this.setState({
-      page: "home", 
-      postingArray: this.state.postingArray.concat([newPostJson])
+    //this.setState({page: "home"})
+    const Url='http://localhost:3001/post';
+    axios({
+      method: 'post',
+      url: Url,
+      data: {
+        newPostJson
+      }
     })
+    .then(data=>console.log(data))
+    .catch(err=>console.log(err))
   }
 
   render() {
