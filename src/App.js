@@ -75,7 +75,10 @@ class App extends React.Component {
         newPostJson
       }
     })
-    .then(data=>console.log(data))
+    .then((data)=> {
+      console.log(data)
+      this.setState({page : "home"})
+    })
     .catch(err=>console.log(err))
   }
 
