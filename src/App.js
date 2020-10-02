@@ -3,6 +3,7 @@ import './styles/App.css';
 
 import Listings from './components/Listings.js'
 import NewPost from './components/NewPost.js'
+import Account from './components/Account.js'
 
 import axios from 'axios'
 
@@ -13,33 +14,8 @@ class App extends React.Component {
     this.submitPost = this.submitPost.bind(this);
 
     this.state={
-      page: "home",
-      postingArray: [{
-        title: "Example Title",
-        price: 10.2,
-        category: "Example Category",
-        location: 94610,
-        sellerName: "Exaple Name",
-        email:  "Example@Email.com",
-        description: "Example Description",
-      },{
-        title: "Title 2",
-        price: 0,
-        category: "Metal",
-        location: 94611,
-        sellerName: "Scrap SF",
-        email:  "Example@Email.com",
-        description: "Example Description",
-      },{
-        title: "Title 2",
-        price: 0,
-        category: "Metal",
-        location: 94611,
-        sellerName: "Scrap SF",
-        email:  "Example@Email.com",
-        description: "Example Description"
-      }
-    ]
+      page: "Account",
+      postingArray: []
     }
 
   }
@@ -98,7 +74,11 @@ class App extends React.Component {
           submitPost={this.submitPost}
         />
       )
-    }
+    } else if(this.state.page==="Account") {
+      return(
+        <Account/>
+      )
+    }    
   }  
 }
 function Search() {

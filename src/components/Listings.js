@@ -17,13 +17,6 @@ class Listings extends React.Component {
     this.componentDidMount = this.componentDidMount.bind(this);
     this.state={ 
       postingArray: [
-        // title: "Example Title",
-        // price: 10.2,
-        // category: "Example Category",
-        // location: 94610,
-        // sellerName: "Exaple Name",
-        // email:  "Example@Email.com",
-        // description: "Example Description",
       ]
     }
   }

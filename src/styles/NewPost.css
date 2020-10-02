@@ -170,6 +170,7 @@
     color: white;
     background-color: #414343;
     cursor: pointer;
+    max-width: 80px;
   }
 
   .footerPost {

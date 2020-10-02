@@ -70,6 +70,49 @@ app.post('/post', jsonParser, (req, res) => {
   });
 })
 
+app.post('/login', jsonParser, (req, res) => {
+console.log('Anything')
+
+let phoneNumber = req.body.phoneNumber
+
+  // Download the helper library from https://www.twilio.com/docs/node/install
+        // Your Account Sid and Auth Token from twilio.com/console
+        // DANGER! This is insecure. See http://twil.io/secure
+        const accountSid = 'AC51f4066216500079216089aee41dc87a';
+        const authToken = '6583fc314fd61ccf1a2a234cc0dbc4db';
+        const client = require('twilio')(accountSid, authToken);
+
+        client.verify.services('VAc9e3c0feee4f1fe0c4c8806107a015b5')
+             .verifications
+             .create({to: '+1'+phoneNumber, channel: 'sms'})
+             .then(verification => console.log(verification.status));
+
+          res.send("hi")
+})
+
+app.post('/smspin', jsonParser, (req, res) => {
+  console.log('smspin')
+  let pin = req.body.pin
+  let phoneNumber= req.body.phoneNumber
+  console.log(pin)
+
+
+
+    // Download the helper library from https://www.twilio.com/docs/node/install
+    // Your Account Sid and Auth Token from twilio.com/console
+    // DANGER! This is insecure. See http://twil.io/secure
+    const accountSid = 'AC51f4066216500079216089aee41dc87a';
+    const authToken = '6583fc314fd61ccf1a2a234cc0dbc4db';
+    const client = require('twilio')(accountSid, authToken);
+
+    client.verify.services('VAc9e3c0feee4f1fe0c4c8806107a015b5')
+          .verificationChecks
+          .create({to: '+1'+phoneNumber, code: pin})
+          .then(verification_check => console.log(verification_check.status));
+
+  res.send("hi")
+})
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
